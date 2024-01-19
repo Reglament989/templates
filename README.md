@@ -64,3 +64,13 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+### Wallet Managment
+
+[Documentation](https://book.getfoundry.sh/reference/cast/wallet-commands)
+
+```shell
+cast wallet new
+cast wallet import BOB --interactive
+cast wallet list
+```

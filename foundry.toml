@@ -1,6 +1,23 @@
 [profile.default]
 src = "src"
-out = "out"
+out = "target"
 libs = ["lib"]
+optimizer = true
+optimizer_runs = 10_000_000 # Fine tune this before deploying
+via_ir = true
+optimizer_details = { constantOptimizer = true, yul = true }
+
+[profile.lite]
+optimizer = true
+optimizer_runs = 0
+optimizer_details = { yulDetails = { optimizerSteps = '' } }
+
+[rpc_endpoints]
+mainnet = "${FOUNDRY_MAINNET_RPC}" 
+bsc = "${FOUNDRY_BSC_RPC}"
+
+[etherscan]
+mainnet = { key = "${FOUNDRY_ETHERSCAN_MAINNET_KEY}" }
+# unknownchain = { key = "ABCDEFG", url = "https://<etherscan-api-url-for-that-chain>" }
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
